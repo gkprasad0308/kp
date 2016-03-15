@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="messagecontroller.js"></script>
+</head>
+<body ng-controller="MessageCtrl as mess">
+
+	Name:
+	<input type="text" ng-model="mess.name" />
+	<br>
+	<br>
+	<span ng-bind="mess.message"></span> <br/><br/>	
+	<button ng-click="mess.hello()">Hello Message</button>
+	<button ng-click="mess.bye()">Bye Message</button>
+</body>
+</html>

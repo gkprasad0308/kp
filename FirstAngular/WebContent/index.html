@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="serviceapp">
+<head>
+<meta charset="ISO-8859-1">
+<title>REST Service Call</title>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
+<script type="text/javascript" src="js/angular-animate.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="controller.js"></script>
+<script type="text/javascript" src="service.js"></script>
+<style type="text/css">
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin-left: 0px
+}
+
+th, td {
+	padding: 5px;
+	text-align: center;
+}
+
+span {
+	margin: 150px;
+}
+#header {
+	background-color: green;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+
+#section {
+	width: 350px;
+	float: left;
+	padding: 10px;
+}
+
+#footer {
+	background-color: green;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+}
+</style>
+</head>
+<body>
+	<div ng-view></div>
+</body>
+</html>

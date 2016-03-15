@@ -1,0 +1,22 @@
+<div ng-include="'header.html'"></div>
+<br>
+<div ng-controller="CustomerCtrl">
+	<table style="width: 1000px">
+		<th>Customer Id</th>
+		<th>Customer Name</th>
+		<th>Customer City</th>
+		<th colspan="2">Action</th>
+		<tr ng-repeat="person in persons">
+			<td><div ng-if="person.value._id==personId"><input type="text" ng-model="person.value._id"></div><div ng-if="person.value._id!=personId">{{person.value._id}}</div></td>
+			<td><div ng-if="person.value._id==personId"><input type="text" ng-model="person.value.personName"></div><div ng-if="person.value._id!=personId">{{person.value.personName}}</div></td>
+			<td><div ng-if="person.value._id==personId"><input type="text" ng-model="person.value.personCity"></div><div ng-if="person.value._id!=personId">{{person.value.personCity}}</div></td>
+			<td><div ng-if="person.value._id==personId"><button ng-click="updateCustomer(person)">Save</button></div><div ng-if="person.value._id!=personId"><button ng-click="showUpdateCustomerData(person)">Update</button></div></td>
+			<td><div ng-if="person.value._id==personId"><button ng-click="cancelUpdate()">Cancel</button></div><div ng-if="person.value._id!=personId"><button ng-click="deleteCustomer(person)">Delete</button></div></td>
+		</tr>
+	</table>
+	<div id="center">
+		<button ng-click="navigateToCustomer()">Add Customer</button>
+		<button ng-click="showHomePage()">Back To Home Page</button>
+	</div>	
+</div>
+<div ng-include="'footer.html'"></div>

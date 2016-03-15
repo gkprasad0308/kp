@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="serviceapp">
+<head>
+<meta charset="ISO-8859-1">
+<title>REST Service Call</title>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="controller.js"></script>
+<style>
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin-left: 50px
+}
+
+th, td {
+	padding: 5px;
+	text-align: center;
+}
+
+span {
+	margin: 150px;
+}
+</style>
+</head>
+<body>
+	<div ng-controller="ServiceCtrl">
+		<table style="width: 50%">
+			<tr>
+				<td><h1>Customer-Product Application</h1></td>
+			</tr>
+			<tr>
+				<td><table style="width: 50%">
+						<tr>
+							<td><a href="#/Customer">Customer</a></td>
+						</tr>
+						<tr>
+							<td>Product</td>
+						</tr>
+						<tr>
+							<td>Customer Order</td>
+						</tr>
+					</table></td>
+			</tr>
+		</table>
+		<table border=""><tr><th colspan="3" align="center">Copy rights reserved to www.gkp.com, 2016</th></tr></table>
+	</div>
+</body>
+</html>

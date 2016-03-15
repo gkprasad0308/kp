@@ -1,0 +1,40 @@
+<div ng-include="'header.html'"></div>
+<br>
+<div ng-controller="CustomerCtrl">
+	<span><b>Customer-Details</b></span>
+	<table style="width: 80px">
+		<tr>
+			<td>Customer Id:</td>
+			<td><input type="text" ng-model="id" placeholder="Customer Id"></td>
+		</tr>
+		<tr>
+			<td>Customer Name:</td>
+			<td><input type="text" ng-model="name"
+				placeholder="Customer Name"></td>
+		</tr>
+		<tr>
+			<td>Customer city:</td>
+			<td><input type="text" ng-model="city"
+				placeholder="Customer City"></td>
+		</tr>
+	</table>
+	<br>
+	<table>
+	<tr>
+	<td>
+	<div ng-hide="added">
+		<button ng-click="addCustomer()">Save</button>
+	</div>
+	<div ng-show="added">
+		<b>Customer Added Successfully...</b>
+	</div>
+	</td>
+	<td>
+	<div>
+		<button ng-click="showHomePage()">Back To Home Page</button>
+	</div>
+	</td>
+	<tr>
+	</table>
+</div>
+<div ng-include="'footer.html'"></div>

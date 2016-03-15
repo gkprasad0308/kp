@@ -1,0 +1,18 @@
+{
+	"people": [ {
+		"name" : "Ravi",
+		"age" : 15
+	}, {
+		"name" : "Rajesh",
+		"age" : 18
+	}, {
+		"name" : "Rakesh",
+		"age" : 16
+	}, {
+		"name" : "Ramesh",
+		"age" : 14
+	}, {
+		"name" : "Raghava",
+		"age" : 8
+	} ]
+}

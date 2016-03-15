@@ -1,0 +1,21 @@
+<div ng-include="'header.html'"></div>
+<br>
+<div ng-controller="ProductCtrl">
+	<table style="width: 1000px">
+		<th>Product Name</th>
+		<th>Product Desc</th>
+		<th>Availability</th>
+		<tr ng-repeat="product in products">
+			<td>{{product.value.productName}}</td>
+			<td>{{product.value.productDesc}}</td>
+			<td>
+			<button ng-show="product.value.available" ng-click="buyProduct(product)">Buy It!</button>
+			<div ng-if="product.value.available==false">Sold Out!</div>
+			</td>			
+		</tr>
+	</table>
+	<br>
+	<button ng-click="showHomePage()">Back To Home Page</button>
+</div>
+<br>
+<div ng-include="'footer.html'"></div>
