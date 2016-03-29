@@ -1,0 +1,7 @@
+---
+applications:
+- name: trusted-analytics-platform
+  memory: 1G
+  command: node --max-old-space-size=500 server.js
+  services:
+    - couchdb1

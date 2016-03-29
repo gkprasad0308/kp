@@ -1,0 +1,60 @@
+<div class="mainform">
+    <div class="appHeader">
+        <nav>
+            <div class="header-left">
+                <!-- Logo Comes Here -->
+                <img src="../images/home_PK_Ticker_logo.png">
+                <span>{{ctrl.client.value.firstName}}'s Portfolio: Data Table</span>
+                <!-- <font size="5">{{ctrl.client.value.firstName}}'s Portfolio: </font><font size="3">Data Table</font>-->
+            </div>
+            <div class="header-right">
+                <!-- <span>{{ctrl.ctrl.clientName}}</span>-->
+                <select>
+                    <option value="">{{ctrl.name}}</option>
+                    <option value="">Sing Out</option>
+                </select>
+                <!--<input class="input" type="text"></input><font size="3"> Joe Doe</font>-->
+            </div>
+        </nav>
+    </div>
+    <div class="bredcrumbs">
+        <a ng-click="ctrl.backToClientDashBoard(ctrl.client.value.clientId)" href=""> &lt Client Dashboard</a>
+        <!--<a ng-href={{ctrl.backToClientDashBoard(ctrl.client.value.clientId)}}> &lt Client Dashboard</a>-->
+    </div>
+    <div class="content-area">
+        <div class="Cash">
+            <span>Cash : </span>
+            <label>${{ctrl.client.value.cash | number:2}}</label>
+        </div>
+        <table id="dataTable" width="100%" cellpadding="0" cellspacing="0" class="tablelist">
+            <th>ID</th>
+            <th>Loan Amount</th>
+            <th>Interest Rate</th>
+            <th>Term</th>
+            <th>Grade</th>
+            <th>Default Probability</th>
+            <th>Amount Invested</th>
+            <tr ng-repeat="data in ctrl.displayitems">
+                <td>{{data.id}}</td>
+                <td>{{data.loanAmount | number:2}}</td>
+                <td>{{data.intRate}}</td>
+                <td>{{data.term}}</td>
+                <td ng-class="[ctrl.getGrade(data.grade)]" style="text-align:center;">{{data.subGrade}}
+                    <span ng-class="ctrl.getGrade(data.grade)" class="grade-indicator-placing"></span>
+                </td>
+                <!--<td ng-class="[ctrl.getGrade(data.grade)]">
+                    {{data.grade}}
+                    {{data.grade}}</td>-->
+                <td>{{data.predictedDefault | number:2}}</td>
+                <td>{{data.loanAmount * data.ownershipShare| number:2}}</td>
+            </tr>
+            <div class="nextpage">
+                <span class="pntext">{{ctrl.pagecount}} of {{ctrl.totalpagecount}}</span>
+                <a ng-show="ctrl.pagecount<ctrl.totalpagecount" ng-click="ctrl.paggingdata(ctrl.pagecount+1)" class="right" href="">
+                </a>
+                <a ng-show="ctrl.pagecount>1" ng-click="ctrl.paggingdata(ctrl.pagecount-1)" class="left" href="">
+                </a>
+            </div>
+        </table>
+    </div>
+</div>

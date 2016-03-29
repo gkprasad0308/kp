@@ -1,0 +1,208 @@
+<div class="mainform">
+    <div class="appHeader">
+        <nav>
+            <div class="header-left">
+                <img src="../images/home_PK_Ticker_logo.png">
+                <!-- Logo Comes Here -->
+                <span> Client List</span>
+            </div>
+            <div class="header-right">
+                <select>
+                    <option value="">{{ctrl.name}}</option>
+                    <option value="">Sign Out</option>
+                </select>
+                <!--<span>{{ctrl.name}}</span>-->
+            </div>
+
+        </nav>
+    </div>
+   <!-- <div ng-show="ctrl.clientAdded" class="alert alert-success">
+        <strong>Success!</strong> Client added successfully...
+    </div>-->
+    <div class="content-area">
+        <div class="search-area">
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width>
+                        <!--<div class="search-input-content halflings halflings-search">
+                            <span class="halflings halflings-search"></span>
+                            <input type="text" placeholder="Search client name ..." class="search-input glyphicons-input">
+                        </div>-->
+                        <!--<img src="../images/search.png">-->
+                        <input type="text" ng-model="searchName" class="search" placeholder="Search client name">
+                    </td>
+                    <td>
+                        <select id="blue" ng-model="selectedMinAssetFilter" ng-options="value as value for value in minAssetFilterOptions" class="Minasset">
+                            <option value="" selected>Choose Min Total Assets</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select ng-model="selectedMaxAssetFilter" ng-options="value as value for value in maxAssetFilterOptions">
+                            <option value="" selected>Choose Max Total Assets</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="blue" ng-model="selectedObjective" ng-options="value as value for value in investmentObjectiveOpt">
+                            <option value="" selected>Choose Objective</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select ng-model="selectedDeadline" ng-options="value as value for value in investmentDeadlineOpt">
+                            <option value="" selected>Choose Deadline</option>
+                        </select>
+                    </td>
+                  <!--  <td>
+                        <button class="btn">Search</button>
+                    </td> -->
+                </tr>
+            </table>
+        </div>
+        <div>
+            <button type="button" data-toggle="modal" data-target="#myModal" class="add-new-client">+ Add New Client</button>
+        </div>
+        <div>
+            <table width="100%" cellpadding="0" cellspacing="0" class="tablelist">
+                <th>
+                    <div ng-click="ctrl.sortType = 'firstName'; ctrl.sortReverse = !ctrl.sortReverse">
+                        Client Name
+                        <span ng-show="ctrl.sortType == 'firstName' && !ctrl.sortReverse" class="down"></span>
+                        <span ng-show="ctrl.sortType == 'firstName' && ctrl.sortReverse" class="up"></span>
+                    </div>
+                </th>
+                <th>
+                    <div ng-click="ctrl.sortType = 'total'; ctrl.sortReverse = !ctrl.sortReverse">
+                        Total Assets
+                        <span ng-show="ctrl.sortType == 'total' && !ctrl.sortReverse" class="down"></span>
+                        <span ng-show="ctrl.sortType == 'total' && ctrl.sortReverse" class="up"></span>
+                    </div>
+                </th>
+                <!--<th>Client Name </th>
+                <th>Total Assets</th>-->
+                <th>Objective</th>
+                <th>
+                    <div ng-click="ctrl.sortType = 'arr'; ctrl.sortReverse = !ctrl.sortReverse">
+                        ARR
+                        <span ng-show="ctrl.sortType == 'arr' && !ctrl.sortReverse" class="down"></span>
+                        <span ng-show="ctrl.sortType == 'arr' && ctrl.sortReverse" class="up"></span>
+
+                    </div>
+                </th>
+                <th width="6%">Action</th>
+                <tr ng-repeat="client in ctrl.clients| filter:searchName | filter:clientFilter |orderBy: 'value.'+ctrl.sortType:ctrl.sortReverse ">
+                    <td><a ng-click="ctrl.showPortfolio(client)" href="">{{client.value.firstName}} {{client.value.lastName}}</a></td>
+                    <td>{{client.value.total | number:2}}</td>
+                    <td>{{client.value.investingObjective.objective}}
+                        <span ng-show='{{client.value.investingObjective.investingDeadline}}'>By {{client.value.investingObjective.investingDeadline}}</span></td>
+                    <td>
+                        <span ng-class="{true:'posup',false:'negdown'}[client.value.arr >= 0]"></span>
+                         <span ng-class="{true:'',false:'negvalue'}[client.value.arr >= 0]">{{client.value.arr | number:2}}%</span>
+
+                        <!--<span class="negdown"></span>-->
+                        <!--<span class="negdown">{{client.value.arr | number:2}}%</span> </td>-->
+                    <!--<span ng-class="[ctrl.getresult('up')]"></span>{{client.value.arr | number:2}}% </td>-->
+                    <td><a href="" ng-click='ctrl.delete(client)'>Delete</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="form-all mCustomScrollbar">
+                <div id="form_head">
+                    <span>Add New Client</span>
+                </div>
+                <div id="submitform_body">
+                    <div class="actualform">
+                        <div>
+                            <div class="leftsection">
+                                <div class="formlabel">
+                                    <p>First Name<span id="required">*</span></p>
+                                </div>
+                                <div class="forminput">
+                                    <input type="text" class="requestbox" id="txtName" ng-model="ctrl.FirstName" placeholder="FirstName" ng-blur="ctrl.Validalpha(ctrl.FirstName,'Fname')" />
+                                    <!--<span class="errormsg" ng-if=ctrl.isfalphaerror>{{ctrl.falphaerrormessage}} </span>-->
+                                </div>
+                                <div class="formlabel">
+                                    <p>Last Name<span id="required">*</span></p>
+                                </div>
+                                <div class="forminput">
+                                    <input type="text" class="requestbox" id="txtEmail" ng-model="ctrl.LastName" placeholder="LastName" ng-blur="ctrl.Validalpha(ctrl.LastName,'Lname')" />
+                                    <!--<span class="errormsg" ng-if=ctrl.islalphaerror>{{ctrl.lalphaerrormessage}} </span>-->
+                                </div>
+                                <div class="formlabel">
+                                    <p>Email<span id="required">*</span></p>
+                                </div>
+                                <div class="forminput">
+                                    <input type="text" class="requestbox" id="txtEmail" ng-model="ctrl.Email" placeholder="Email" ng-blur="ctrl.Verifyemail(ctrl.Email)" />
+                                    <!--<span class="errormsg" ng-if=ctrl.isemailerror>{{ctrl.emailerrormessage}} </span>-->
+                                </div>
+                            </div>
+                            <div class="rightsection">
+                                <div class="formlabel">
+                                    <p>Amount to invest<span id="required">*</span></p>
+                                </div>
+                                <div class="forminput">
+                                    <input type="text" class="requestbox" ng-model="ctrl.Amount" placeholder="$" ng-blur="ctrl.Validatenumber(ctrl.Amount)" />
+                                    <!--<span class="errormsg" ng-if=ctrl.iscurerror>{{ctrl.Currerrormessage}} </span>-->
+                                </div>
+                                <div class="formlabel">
+                                    <p>Investment Objective<span id="required">*</span></p>
+                                </div>
+                                <div class="forminput">
+                                    <select ng-model="ctrl.investmentObjective" class="requestselectbox" ng-options="item for item in ctrl.investmentObj">
+                                        <option value="">SELECT</option>
+                                    </select>
+                                </div>
+                                <div ng-show="ctrl.investmentObjective=='Retirement' || ctrl.investmentObjective=='Growth'">
+
+                                    <div class="formlabel">
+                                        <p ng-show="ctrl.investmentObjective=='Retirement'">Year of Retirement<span id="required">*</span></p>
+                                        <p ng-show="ctrl.investmentObjective=='Growth'">Growth deadline<span id="required">*</span></p>
+                                    </div>
+                                    <div class="forminput">
+                                        <select ng-model="ctrl.retirement" class="requestselectbox" ng-options="item for item in ctrl.retirementobj">
+                                            <option value="">SELECT</option>
+                                        </select>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="div_footer">
+                            <div id="footer_text">
+                                <div class="divRequired" id="divRequired">
+                                    <ul id="ulRequired"></ul>
+                                </div>
+                            </div>
+                            <div class="errormsg">
+                                <ul>
+                                    <li>
+                                        <span style="block" ng-if=ctrl.isfalphaerror>{{ctrl.falphaerrormessage}} </span></li>
+                                    <li>
+                                        <span ng-if=ctrl.islalphaerror>{{ctrl.lalphaerrormessage}} </span>
+                                    </li>
+                                    <li>
+                                        <span ng-if=ctrl.isemailerror>{{ctrl.emailerrormessage}} </span>
+                                    </li>
+                                    <li>
+                                        <span ng-if=ctrl.iscurerror>{{ctrl.Currerrormessage}} </span>
+                                    </li>
+                                </ul>
+                                <div id="AppButton">
+                                    <div class="AppButton">
+                                        <a id="btnCancel" ng-click="ctrl.reset()" data-dismiss="modal">Cancel</a>
+                                        <a id="btnSubmit" ng-click="ctrl.saveClient()" ng-hide="!ctrl.isAlphaerror || !ctrl.ismailerror || !ctrl.iscurrencyerror || !ctrl.investmentObjective.length>0 " data-dismiss="modal">Save</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

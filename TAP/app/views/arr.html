@@ -1,0 +1,64 @@
+<div class="mainform" ng-controller="arrCtrl as actrl">
+    <div class="appHeader">
+        <nav>
+            <div class="header-left">
+                <img src="../images/home_PK_Ticker_logo.png">
+                <span>{{client.firstName}}'s Portfolio: ARR</span>
+                <!-- Logo Comes Here -->
+                <span> Client List</span>
+            </div>
+            <div class="header-right">
+                <select>
+                    <option value="">{{actrl.name}}</option>
+                    <option value="">Sign Out</option>
+                </select>
+                <!--<span>{{ctrl.name}}</span>-->
+            </div>
+
+        </nav>
+    </div>
+    <!--    <div class="appHeader">
+        <font size="5">Mark's Portfolio: ARR</font>
+    </div>
+    <br>-->
+    <div class="bredcrumbs">
+        <a ng-click="actrl.backToClientDashBoard(actrl.clientId)" href=""> &lt Client Dash Board</a>
+    </div>
+   
+        <div class="Arrcontent">
+            <div class="TotalAssets">
+                <span>Total Assets : </span>
+                <label>${{this.client.assetsToInvest}}</label>
+            </div>
+            <div class="Cash">
+                <span>Cash : </span>
+                <label>${{this.client.assetsToInvest}}</label>
+            </div>
+            <div class="Arrbtn" >
+              
+                <!--<button ng-click="chartType = 1" ng-class="selected-btn-arr">ARR</button>
+                <button ng-click="chartType = 2" ng-class="default-btn-arr">Risk Distribution</button>-->
+                <button class="button" ng-class="{'active': isActive}" ng-click="chartType = 1;setSelected()" type="button">ARR</button> 
+  <button class="button" ng-class="{'active': !isActive}" ng-click="chartType = 2;setSelected()" type="button">Risk Distribution</button>               
+               
+            </div>
+        </div>
+        <div style="max-width: 510px; height: 300px; margin: 0 auto">
+            <div id="container" ng-show="chartType==2"></div>
+
+            <div class="Totalstock" ng-show="chartType==1">
+                <!-- Using Highcharts-->
+                <div class="Stockgraph">
+                    <div class="datagraph" ng-repeat="obj in dateRange">
+                        <button class="btnsection" ng-model="selectedRange" ng-click="changeChart(obj)"> {{obj.name}}</button>
+                    </div>
+                </div>
+                <div style="max-width: 510px; height: 300px; margin: 0 auto">
+                    <div class="riskdis">
+                        <canvas id="line" class="chart chart-line" chart-data="chartData.data" chart-labels="chartData.labels" chart-legend="true" chart-series="chartData.series" chart-click="onClick">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

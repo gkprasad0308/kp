@@ -1,0 +1,691 @@
+@font-face {
+    font-family: 'Proxima Nova Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('ProximaNovaRegular.woff') format('woff');
+}
+.pullright {
+    float: right;
+}
+.pullleft {
+    float: left;
+}
+.mainform {
+    font-family: Proxima Nova Regular !important;
+    background-color: #F4F4F4;
+}
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+body {
+    padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+
+.header {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+}
+
+/* Make the masthead heading the same height as the navigation */
+
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+/* Custom page footer */
+
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+
+.marketing {
+    margin: 40px 0;
+}
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+    .appHeader {
+        border-bottom: 2px solid #066e7e;
+        padding: 15px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .appHeader nav {
+        margin: auto;
+        width: 90%;
+    }
+    .appHeader nav input {
+        margin: 0px;
+    }
+    .header-left {
+        float: left;
+        font-family: Proxima Nova Regular;
+        color: #066E7E;
+        font-size: 25px;
+    }
+    .header-right {
+        float: right;
+        font-family: Proxima Nova Regular;
+        color: #066E7E;
+    }
+    td
+}
+.header-right select {
+    height: 20px;
+    background-color: #f4f4f4;
+    Border: none;
+    margin: 10px 0px 0px 0px;
+}
+.content-area {
+    margin: auto;
+    max-width: 1000px;
+}
+.search-area {
+    margin: 30px 0px 20px;
+    background: #e5e5e5;
+}
+.search-area table {
+    background: #fff;
+    border-spacing: 1.5px;
+    border-collapse: separate;
+}
+.search-area table td {
+    background: #e5e5e5;
+    padding: 0px 0px 0px 5px;
+}
+.search-area table td:last-child {
+    text-align: right;
+}
+.search-area table td .search {
+    background: url('../images/2020search.png') no-repeat;
+    padding-left: 18px;
+    border-radius: 10px;
+    background-color: white;
+}
+.maintab {
+    margin: 115px 292px 50px 292px !important;
+}
+.btn {
+    margin: 0px;
+    padding: 5px 10px;
+    background: #066e7e;
+    borader: none;
+    border-radius: 0px;
+    color: #fff;
+}
+.add-new-client {
+    border-radius: 10px;
+    background: none;
+    color: #066e7e;
+    border: 1px solid #066e7e;
+    padding: 5px 20px;
+    min-width: 200px;
+    margin: 0px 0px 10px;
+}
+.grade-indicator-placing {
+    position: absolute;
+    margin-left: 6px;
+}
+.tablelist {
+    background: #E8E8E8;
+    border-spacing: 1px;
+    border-collapse: separate;
+    border-color: #066E7E !important;
+}
+.tablelist th {
+    padding: 5px 10px;
+    background: #d4d4d4;
+}
+.tablelist td {
+    font-family: Proxima Nova Regular;
+    padding: 3px 10px;
+    margin: 3px 10px 0px 11px;
+}
+.tablelist td a {
+    color: #066e7e;
+    float: right;
+}
+.tablelist tr td:nth-child(4) {
+    color: #0FB2B2;
+}
+.tablelist tr td:last-child {
+    color: #0FB2B2;
+}
+.tablelist tr:nth-child(even) {
+    background: #f4f4f4;
+}
+.tablelist tr:nth-child(odd) {
+    background: #e8e8e8;
+}
+.tablelist tr td:nth-child(5) {
+    color: #066E7E;
+}
+.portfolio-table {
+    background: #E8E8E8;
+    font-family: Proxima Nova Regular;
+    float: left;
+    margin-bottom: 5px;
+}
+.portfolio-table td {
+    width: 33%;
+    padding: 12px 0px 12px 0px;
+}
+.content-area .Cash {
+    background-color: #E5E5E5;
+    width: auto;
+    float: right;
+    font-size: 15px;
+    margin: 0px 0px 10px 0px;
+    padding: 0px 10px;
+}
+.Arrcontent {
+    max-width: 550px;
+    margin: auto;
+    padding-left: 120px;
+}
+.Arrcontent .TotalAssets {
+    background-color: #E5E5E5;
+    width: auto;
+    float: left;
+    font-size: 15px;
+    /* margin: 0px 250px 10px 270px;*/
+    padding: 0px 10px;
+}
+.Arrcontent .Cash {
+    background-color: #E5E5E5;
+    width: auto;
+    float: right;
+    font-size: 15px;
+    margin: 0px 0px 10px 0px;
+    padding: 0px 10px;
+}
+.content-area .TotalAssets label {
+    font-family: Proxima Nova Regular;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.content-area .Cash label {
+    font-family: Proxima Nova Regular;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.content-area .objective {
+    float: left;
+    widows: auto;
+}
+.portfolio-table td .Totalasset {
+    /* font-size: 17px;*/
+    /*text-align: right;*/
+    /* margin: 0px 0px 30px 10px;*/
+}
+.portfolio-table td .Currentvalue {
+    font-size: 17pt;
+    margin: 0px 0px 19px 0px;
+}
+.portfolio-table td .arr {
+    font-size: 15pt;
+    margin: 70px 0px 0px 230px;
+    color: #0FB2B2;
+}
+.portfolio-table td .Totalprice {
+    padding: 15px;
+    font-size: 17pt;
+    margin: 76px 0px 0px 0px;
+}
+.portfolio-table .graph {
+    border-left: 5px solid #FFF;
+    border-right: 5px solid #FFF;
+}
+.input {
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    border: solid 1px black;
+    padding: 5px;
+    margin-left: 780px;
+}
+.Stockgraph {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #066E7E;
+    /*margin-right: 145px;*/
+    pading: 15px;
+}
+.btnsection {
+    border: none;
+    background-color: #F4F4F4;
+}
+.graphdata {
+    width: 300px;
+    height: 50px;
+    margin: 0px;
+}
+.datagraph {
+    max-width: 510px;
+    height: 30px;
+    margin: 0 auto;
+    display: inline-block;
+}
+.Stockgraph1 {
+    text-align: center;
+    margin-bottom: 10px;
+    display: none;
+}
+.back {
+    float: left;
+    color: #066E7E;
+    font-size: 18px;
+    margin: 5px 0px 0px 40px;
+}
+.Clientdata {
+    margin-top: 20px;
+}
+.errormsg {
+    font-family: Proxima Nova Regular;
+    margin-left: 20px;
+    color: red;
+    font-size: 15px;
+    /*border: 2px solid #4188a2;*/
+    /*border-radius: 10px;*/
+    margin-left: 10px;
+    color: #f20000;
+    /*height: 55px;*/
+    margin-bottom: 10px;
+    padding-left: 11px;
+    width: 93%;
+}
+
+/*.errormsg {
+    border: 2px solid #4188a2;
+    border-radius: 10px;
+    margin-left: 10px;
+    color: #f20000;
+    height: 115px;
+    margin-bottom: 10px;
+    padding-left: 11px;
+    width: 93%;
+    font-family: Calibri;
+}*/
+
+.errormsg ul li {
+    list-style: none;
+    padding: 0!important;
+    width: 100%;
+    /* float: left; */
+    color: red;
+    height: auto;
+}
+.form-all {
+    margin: 150px 0px 0px 0px;
+    background-color: #F4F4F4;
+    float: left;
+    border-radius: 9px;
+}
+#form_head {
+    color: black;
+    /* font-family: Calibri;*/
+    font-size: 18pt;
+    /*margin-left: 20px;*/
+    margin-top: 20px;
+    border-bottom: 2px solid #066e7e;
+    /* float: left; */
+    margin-left: 0px;
+}
+#form_head span {
+    margin-left: 15px;
+}
+#submitform_body {
+    margin: 0px;
+    float: left;
+    /* font-family: calibri;*/
+    font-size: 11pt;
+}
+.formlabel {
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/*.formlabel p {
+    margin-bottom: 0px;
+}*/
+
+#required {
+    color: red;
+}
+.requestbox {
+    width: 86%;
+    margin-left: 20px;
+}
+.forminput {
+    width: 290px;
+    margin-bottom: 27px;
+}
+.requestselectbox {
+    margin-left: 20px;
+    width: 250px;
+    height: 25px;
+    padding-left: 7px;
+}
+.leftsection {
+    width: 48%;
+    float: left;
+    /*margin: 0px 0px 15px 0px;*/
+}
+.leftsection .section {
+    margin-bottom: -10px;
+}
+.rightsection {
+    /*width: 48%;*/
+    float: right;
+    /*height: 200px !important;
+    margin: 0px 0px 15px 0px;*/
+}
+.back a {
+    color: #066E7E;
+}
+.uploadbox {
+    width: 550px;
+    height: 25px;
+    margin-top: 10px;
+}
+.formupload {
+    margin: 20px;
+    font-size: 11pt;
+    font-weight: bold;
+    width: 592px;
+}
+#divRequired {
+    display: none;
+    color: #f20000;
+}
+#div_footer {
+    float: right;
+    width: 100%;
+    margin: 0px 0px 15px 0px;
+    /* font-family: Calibri;*/
+    color: #808080;
+}
+#footer_text {
+    float: left;
+    position: relative;
+    margin-left: 25px;
+}
+#AppButton {
+    float: right;
+    /*margin: 0 5px;*/
+}
+.AppButton a {
+    background-color: #066E7E;
+    border-radius: 3px;
+    color: #FFFFFF !important;
+    /*font-family: Calibri;*/
+    font-size: 11pt;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 15px;
+    line-height: 20px;
+    cursor: pointer;
+}
+#txtDetails {
+    margin-left: 20px;
+    width: 552px;
+    padding: 5px !important;
+}
+label.ess-error-msg.ng-binding.ng-scope {
+    font-size: 12px;
+    font-weight: normal;
+    color: red;
+    margin-left: 20px;
+}
+.up,
+.down,
+.left,
+.right {
+    position: relative;
+    width: 0;
+    height: 0;
+}
+.up {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: 10px;
+    border-bottom: 5px solid #066E7E;
+}
+.down {
+    top: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #066E7E;
+}
+.posup {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: 12px;
+    border-bottom: 5px solid #0FB2B2;
+    position: relative;
+    margin-right: 5px;
+}
+.negdown {
+    top: 12px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #FE3824 !important;
+    position: relative;
+    margin-right: 5px;
+}
+.negvalue {
+    color: #ff0000 !important;
+}
+.negvalue .negdown {
+    border-top: 5px solid #FE3824 !important;
+}
+.left {
+    position: absolute;
+    border: 10px solid transparent;
+    border-right-color: #066E7E;
+    margin-left: -9px;
+}
+.right {
+    position: absolute;
+    border: 10px solid transparent;
+    border-left-color: #066E7E;
+    margin-left: 15px;
+}
+.pntext {
+    width: 80px;
+    display: block;
+    float: left;
+    text-align: right;
+    padding-right: 7px;
+}
+.positive,
+.negative,
+{
+    position: relative;
+    width: 0;
+    height: 0;
+}
+.positive {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    bottom: 17px;
+    border-bottom: 10px solid #0FB2B2;
+    position: relative;
+    margin-right: 5px;
+}
+.negative {
+    top: 16px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #0FB2B2;
+}
+
+/*.greenUp,
+.redDown {
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
+.greenUp {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    bottom: 25px;
+    border-bottom: 20px solid #458B00;
+}
+
+.greenDown {
+    top: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #066E7E;
+}*/
+
+.A span,
+.B span,
+.C span,
+.D span,
+.E span {
+    width: 15px;
+    border-radius: 20px;
+    float: right;
+}
+.A span {
+    border: 9px solid #8CD3CE;
+}
+.B span {
+    border: 9px solid #0FB2B2;
+}
+.C span {
+    border: 9px solid #0D918E;
+}
+.D span {
+    border: 9px solid #066E7E;
+}
+.E span {
+    border: 9px solid #055256;
+}
+.bredcrumbs {
+    width: 90%;
+    margin: auto;
+    font-size: 18px;
+}
+.bredcrumbs a {
+    color: #066E7E;
+}
+.Totalamount {}
+.donutstyle {
+    margin: auto;
+}
+.search-area td select {
+    background-color: #e5e5e5;
+    border: none;
+}
+.nextpage {
+    float: right;
+    clear: both;
+    width: 108px;
+}
+#dataTable tr th {
+    text-align: center;
+}
+#dataTable tr td {
+    text-align: center;
+}
+.Arrbtn {
+    clear: both;
+    float: left;
+    border-radius: 5px;
+    border: 1px solid #066E7E;
+    margin-bottom: 15px;
+}
+.selected-btn-arr {
+    border: none;
+    background: #066E7E;
+    color: #ffffff;
+    pading: 5px 10px;
+    min-width: 150px;
+}
+.default-btn-arr {
+    border: none;
+    background: none;
+    pading: 5px 10px;
+    min-width: 150px;
+    color: #066E7E;
+}
+.Totalstock .Stockgraph {
+    clear: both;
+}
+
+.button {
+    border: none;
+    background: none;
+    pading: 5px 10px;
+    min-width: 150px;
+    color: #066E7E;
+}
+.active {
+ border: none;
+    background: #066E7E;
+    color: #ffffff;
+    pading: 5px 10px;
+    min-width: 150px;
+}

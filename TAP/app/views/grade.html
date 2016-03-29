@@ -1,0 +1,49 @@
+<div class="mainform">
+    <!-- Scriptalicious! -->
+    <div class="appHeader">
+        <nav>
+            <div class="header-left">
+                <img src="../images/home_PK_Ticker_logo.png">
+                <!-- Logo Comes Here -->
+                <span>{{ctrl.clientPortfolio.value.clientName}}'s Portfolio: Loan Amounts by Grade </span>
+            </div>
+            <div class="header-right">
+                <select>
+                    <option value="">{{ctrl.name}}</option>
+                    <option value="">Sing Out</option>
+                </select>
+                <!--<span>{{ctrl.name}}</span>-->
+            </div>
+
+        </nav>
+    </div>
+
+    <div class="bredcrumbs">
+        <a ng-click="ctrl.backToClientDashBoard(ctrl.clientPortfolio.value.clientId)" href=""> &lt Client Dash Board</a>
+    </div>
+    <!--<div class="content-area">-->
+        <section class="content-area" align="center">
+            <div class="Cash">
+                <span>Cash : </span>
+                <label>${{ctrl.clientPortfolio.value.cash}}</label>
+            </div>
+            <div class="donutstyle">
+            <donut width="300" height="300" radius="55" property="'value'" colours="ctrl.donutColours" mousemove="ctrl.openTooltip(model)" mouseleave="ctrl.closeTooltip()" ng-model="ctrl.donutModel">
+                <tooltip ng-model="selectedModel"></tooltip>
+                <div class="donuttooltip" ng-show="ctrl.selectedModel.pointer" ng-style="{ 'left': (ctrl.selectedModel.pointer[0] + 20) + 'px', 'top': ctrl.selectedModel.pointer[1] + 'px' }">
+                    {{ctrl.selectedModel.name}}: <strong>{{ctrl.selectedModel.value}}</strong>
+                    <!--<strong></strong>-->
+                </div>
+            </donut>
+            <div class="mainsection">
+                <div ng-repeat="data in ctrl.clientIdenticalGrades | orderBy: data">
+                    <div> {{data}}<span class="{{data}}"></span></div>
+                </div>
+            </div>
+            </div>
+            <div class="item modify-all" ng-click="setValues()">
+                <!-- Random-->
+            </div>
+        </section>
+    <!--</div>-->
+</div>

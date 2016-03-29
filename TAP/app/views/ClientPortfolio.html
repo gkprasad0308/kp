@@ -1,0 +1,124 @@
+<div class="mainform">
+    <div class="appHeader">
+        <nav>
+            <div class="header-left">
+                <!-- Logo Comes Here -->
+                <img src="../images/home_PK_Ticker_logo.png">
+                <span>{{ctrl.clientPortfolio.value.clientName}}'s Portfolio</span>
+            </div>
+            <div class="header-right">
+                <select>
+                    <option value="">{{ctrl.name}}</option>
+                    <option value="">Sign Out</option>
+                </select>
+                <!--<span>{{ctrl.name}}</span>-->
+            </div>
+        </nav>
+    </div>
+    <div class="bredcrumbs">
+        <!--   <a  ng-click="ctrl.backToAllClients()" ng-href="http://www.w3schools.com">Visit W3Schools.com!</a>-->
+        <a ng-click="ctrl.backToAllClients()" href=""> &lt All Clients</a>
+    </div>
+    <div class="content-area">
+        <div class="Clientdata">
+            <span>Client : </span>
+            <label>{{ctrl.clientPortfolio.value.clientName}}</label>
+        </div>
+
+        <div class="objective">
+            <span>Objective : </span>
+            <label>{{ctrl.clientPortfolio.value.investingObjective.objective}}</label>
+            <label> By {{ctrl.clientPortfolio.value.investingObjective.investingDeadline}}</label>
+        </div>
+
+        <div class="Cash">
+            <span>Cash : </span>
+            <label>${{ctrl.clientPortfolio.value.cash | number:2}}</label>
+        </div>
+        <table width="100%" cellpadding="0" cellspacing="0" class="portfolio-table">
+            <tr align="center">
+
+                <td>
+                    <div class="Totalasset">{{ctrl.clientPortfolio.value.clientName}}'s Total Assets</div>
+                    <div class="Totalprice"> Invested Amount: ${{ctrl.clientPortfolio.value.investedAmount | number:2}} </div>
+                    <div class="Currentvalue">&nbsp;&nbsp;&nbsp;Current Value: ${{ctrl.clientPortfolio.value.totalAssets | number:2}}</div>
+                    <div class="arr">
+                        <span class="positive"> </span>
+                        <span>{{ctrl.clientPortfolio.value.arr}}</span></div>
+                    <!--<button>Mark's Total Assets</button>-->
+                </td>
+                <td class="graph" ng-click="ctrl.showAmountsByGrade(ctrl.clientPortfolio.key)">
+                    <div>Total Loan Amounts By Grade</div>
+                    <div class="Totalamount">
+                        <span>Total Loan Count : </span>
+                        <label>{{ctrl.clientLoans.length | number}}</label>
+                    </div>
+                    <section>
+                        <donut id='donutcontainer' width="200" height="200" radius="50" property="'value'" colours="ctrl.donutColours" ng-model="ctrl.donutModel" mousemove="ctrl.openTooltip(model)" mouseleave="ctrl.closeTooltip()">
+                            <tooltip ng-model="selectedModel"></tooltip>
+                            <div class="donuttooltip" ng-show="ctrl.selectedModel.pointer" ng-style="{ 'left': (ctrl.selectedModel.pointer[0] + 20) + 'px', 'top': ctrl.selectedModel.pointer[1] + 'px' }">
+                                {{ctrl.selectedModel.name}}: <strong>{{ctrl.selectedModel.value}}</strong>
+                                <!--<strong></strong>-->
+                            </div>
+                        </donut>
+                        <div class="mainsection1">
+                            <div ng-repeat="data in ctrl.clientIdenticalGrades | orderBy: data">
+                                <div> {{data}}<span class="{{data}}"></span></div>
+                            </div>
+                        </div>
+                        <div class="item modify-all" ng-click="setValues()">
+                            <!-- Random-->
+                        </div>
+                    </section>
+                </td>
+                <td ng-controller="arrCtrl" ng-click="ctrl.showARR(ctrl.clientPortfolio.value.clientId)">
+                    <div>
+                        <canvas 
+                            id="line" class="chart chart-line"
+                            chart-data="chartData.data"
+                            chart-labels="chartData.labels"
+                            chart-legend="true"
+                            chart-series="chartData.series"
+                             chart-click="onClick">
+                         </canvas> 
+               
+                    </div> 
+                </td>
+            </tr>
+        </table>
+
+        <table width="100%" cellpadding="0" cellspacing="0" class="tablelist" ng-click="ctrl.showDataTable(ctrl.clientPortfolio.value.clientId)">
+            <th>ID</th>
+            <th>Loan Amount</th>
+            <th>Interest Rate</th>
+            <th>Term</th>
+            <th>Grade</th>
+            <th>Default Probability</th>
+            <th>Amount Invested</th>
+            <!--  <tr ng-repeat="data in ctrl.clientPortfolio.value.dataTable | limitTo:5">-->
+            <tr ng-repeat="data in ctrl.displayitems | limitTo:10">
+                <td>{{data.id}}</td>
+                <td>{{data.loanAmount| number:2}} </td>
+                <td>{{data.intRate | number:2}}</td>
+                <td>{{data.term}}</td>
+                <!-- <td>{{data.grade}}</td>-->
+                <td ng-class="[ctrl.getGrade(data.grade)]">{{data.subGrade}}
+                    <span ng-class="[ctrl.getGrade(data.grade)]"></span>
+                </td>
+                <td>{{data.predictedDefault | number:4}}</td>
+                <td>{{data.loanAmount * data.ownershipShare| number:2}}</td>
+            </tr>
+           <!-- <tr align="center">
+                <td>
+                    <button ng-click="ctrl.showDataTable(ctrl.clientPortfolio.value.clientId)">Show All Records</button>
+                </td>
+                <td>
+                    <button ng-show="ctrl.pagecount>1" ng-click="ctrl.paggingdata(ctrl.pagecount-1)">Prev</button>
+                </td>
+                <td>
+                    <button ng-show="ctrl.pagecount<ctrl.totalpagecount" ng-click="ctrl.paggingdata(ctrl.pagecount+1)">Next</button>
+                </td>
+            </tr>-->
+        </table>
+    </div>
+</div>

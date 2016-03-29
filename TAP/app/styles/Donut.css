@@ -1,0 +1,183 @@
+/*Donut*/
+
+@font-face {
+    font-family: 'Proxima Nova Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('ProximaNovaRegular.woff') format('woff');
+}
+body {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5 !important;
+}
+body,
+html {
+    height: 100%;
+}
+donut {
+    position: relative;
+    display: inline-block;
+}
+#donutcontainer {
+    padding-top: 20px;
+    margin-right: 35px;
+}
+.donuttooltip {
+    border: 1px solid rgba(0, 0, 0, .25);
+    border-radius: 4px;
+    background-color: white;
+    font-size: 12px;
+    /*font-family: Arial, Tahoma, Verdana, Arial, Helvetica, sans-serif;*/
+    position: absolute;
+    padding: 2px 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+    white-space: nowrap;
+    /*top: 100px;*/
+    pointer-events: none;
+}
+section.container {
+    /* display: table-row; */
+    text-align: center;
+    /* width: 40%; */
+    height: 100%;
+    /* float: none; */
+    margin: 100px 0px 0px 350px;
+}
+section.container section.app {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    float: left;
+}
+section.container section.app section.legend {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: 1px solid rgba(0, 0, 0, .25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    background-color: white;
+    text-align: left;
+}
+section.container section.app section.legend div.item {
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+section.container section.app section.legend div.item:last-of-type {
+    border-bottom: 0;
+}
+section.container section.app section.legend div.item label {
+    float: left;
+    overflow: hidden;
+    font-family: Arial, Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: rgba(0, 0, 0, .5);
+    padding: 10px 10px 0 20px;
+    width: 15px;
+}
+section.container section.app section.legend div.item input {
+    padding: 10px;
+    border: 0;
+    width: 20px;
+    outline: none;
+}
+section.container section.app section.legend div.item.modify-all {
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: dodgerblue;
+    transition: all .35s;
+    cursor: pointer;
+}
+section.container section.app section.legend div.item.modify-all:hover {
+    color: black;
+}
+.item input[type="text"] {
+    margin-left: 10px;
+}
+.graph .mainsection {
+    margin: 90px 0px 0px;
+    font-family: Proxima Nova Regular;
+    font-size: 10px;
+}
+.graph .item {
+    clear: both;
+}
+.graph .lbls {
+    float: right;
+    margin: 0px;
+    font-size: 11px;
+}
+.graph .secA,
+.graph .secB,
+.graph .secC,
+.graph .secD,
+.graph .secE {
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin: 2px 0px 0px 1px;
+}
+.mainsection1 {
+    float: left;
+    margin: 160px 0px 0px 5px;
+}
+.mainsection {
+    float: left;
+    margin: 140px 75px 0px 0px;
+}
+.mainsection span {
+    font-family: Proxima Nova Regular !important;
+    width: 15px;
+    height: 15px;
+    float: right;
+    font-size: 13pt;
+    margin: 3px 10px 0px 6px;
+}
+.mainsection1 span {
+    font-family: Proxima Nova Regular !important;
+    width: 10px;
+    height: 10px;
+    float: right;
+    font-size: 10pt;
+    margin: 4px 10px 0px 6px;
+}
+.mainsection .A {
+    background: #8CD3CE !important;
+}
+.mainsection .B {
+    background-color: #0FB2B2 !important;
+}
+.mainsection .C {
+    background-color: #0D918E !important;
+}
+.mainsection .D {
+    background-color: #066E7E !important;
+}
+.mainsection .E {
+    background-color: #055256 !important;
+}
+
+.mainsection1 .A {
+    background: #8CD3CE !important;
+}
+.mainsection1 .B {
+    background-color: #0FB2B2 !important;
+}
+.mainsection1 .C {
+    background-color: #0D918E !important;
+}
+.mainsection1 .D {
+    background-color: #066E7E !important;
+}
+.mainsection1 .E {
+    background-color: #055256 !important;
+}
+.lbls {
+    width: 20px;
+    float: left;
+    margin: 2px 0px 0px 10px;
+    /* margin: 0;*/
+    /*padding-top: 5px;*/
+}
