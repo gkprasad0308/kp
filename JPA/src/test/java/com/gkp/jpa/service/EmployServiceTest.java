@@ -28,7 +28,7 @@ public class EmployServiceTest extends BaseServiceTest{
 	public void testBGetEmp(){
 		Employ emp = employService.getEmployByName("Krishna");
 		Assert.assertNotNull(emp);
-		while(true);
+		//while(true);
 	}
 
 }
