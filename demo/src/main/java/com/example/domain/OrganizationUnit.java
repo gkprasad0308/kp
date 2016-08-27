@@ -28,6 +28,12 @@ public class OrganizationUnit extends AbstractBaseEntity {
 	
 	public OrganizationUnit(){}
 
+	public OrganizationUnit(String name, String desc) {
+		// TODO Auto-generated constructor stub
+		this.name=name;
+		this.description=desc;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -62,7 +68,9 @@ public class OrganizationUnit extends AbstractBaseEntity {
 		this.tenant = tenant;
 	}
 	
-	
+	public void addRole(Role role){
+		this.roles.add(role);
+	}
 	
 
 }

@@ -1,22 +1,25 @@
 package com.example.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.domain.Employee;
+import com.example.repository.EmployeeRepository;
 
 @Service
-public class EmployeeService implements AbstractService{
+public class EmployeeService implements AbstractService {
+
+	@Autowired
+	EmployeeRepository employeeRepository;
 
 	@Override
 	public Employee create(Object obj) {
-		// TODO Auto-generated method stub
-		return null;
+		return employeeRepository.save((Employee) obj);
 	}
 
 	@Override
 	public Employee getByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return employeeRepository.findByName(name);
 	}
 
 }

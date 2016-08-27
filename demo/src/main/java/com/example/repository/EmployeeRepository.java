@@ -11,4 +11,6 @@ import com.example.domain.Employee;
  * @copyright Copyright (c) 2015 - PSTechnology - All Rights Reserved
  */
 public interface EmployeeRepository extends BaseRepository<Employee> {
+	
+	Employee findByName(String name);
 }

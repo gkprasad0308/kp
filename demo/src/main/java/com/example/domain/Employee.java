@@ -6,6 +6,10 @@ import javax.persistence.Entity;
 public class Employee extends AbstractBaseEntity{
 	
 	String name;
+	public Employee(){}
+	public Employee(String name){
+		this.name=name;
+	}
 
 	public String getName() {
 		return name;

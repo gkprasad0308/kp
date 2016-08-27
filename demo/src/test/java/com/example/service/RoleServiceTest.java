@@ -10,8 +10,8 @@ public class RoleServiceTest extends BaseServiceTest {
 	@Test
 	public void createRole() {
 		Role role = new Role("system", "system");
-		role.addOrgUnit(organizationUnitService.getByName("OrganizationUnit"));
-		role.setTenant(tenantService.getByName("Tenant"));
+		role.addOrgUnit(organizationUnitService.getByName("Org"));
+		role.setTenant(tenantService.getByName("UP"));
 
 		role = roleService.create(role);
 
