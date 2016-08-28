@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.Locale;
+
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.boot.model.naming.ImplicitEntityNameSource;
 import org.hibernate.boot.model.naming.ImplicitForeignKeyNameSource;
@@ -24,7 +26,7 @@ public class CustomNamingStrategy extends ImplicitNamingStrategyJpaCompliantImpl
 		if (mappingEnum != null) {
 			return toIdentifier(addPrefix(mappingEnum.getTableName()), source.getBuildingContext());
 		} else {
-			return toIdentifier(addPrefix(super.determinePrimaryTableName(source).getText()),
+			return toIdentifier(addPrefix(addUnderscores(super.determinePrimaryTableName(source).getText())),
 					source.getBuildingContext());
 		}
 	}
@@ -33,18 +35,11 @@ public class CustomNamingStrategy extends ImplicitNamingStrategyJpaCompliantImpl
 	
 	@Override
 	public Identifier determineJoinTableName(ImplicitJoinTableNameSource source) {
-		//System.out.println("getOwningPhysicalTableName "+source.getOwningPhysicalTableName());
-		//System.out.println("getNonOwningPhysicalTableName "+source.getNonOwningPhysicalTableName());
-		//System.out.println("getOwningEntityNaming "+source.getOwningEntityNaming().getClassName());
-		//System.out.println("getNonOwningEntityNaming "+source.getNonOwningEntityNaming().getClassName());
-		//System.out.println("getAssociationOwningAttributePath "+source.getAssociationOwningAttributePath());
 		JoinTableNameMappingEnum mappingEnum = JoinTableNameMappingEnum.fromSimpleName(source.getOwningEntityNaming().getClassName(),source.getNonOwningEntityNaming().getClassName());
         if(mappingEnum != null)
         {
-        	//System.out.println("returned join table name is: "+toIdentifier(addPrefix(mappingEnum.getTableName()), source.getBuildingContext()).getText());
         	return toIdentifier(addPrefix(mappingEnum.getTableName()), source.getBuildingContext());
         }else{
-        	//System.out.println("returned join table name is: "+super.determineJoinTableName(source).getText());
         	return super.determineJoinTableName(source);
         	
         }
@@ -55,10 +50,6 @@ public class CustomNamingStrategy extends ImplicitNamingStrategyJpaCompliantImpl
 	//User foreignkey constraints
 	@Override
 	public Identifier determineForeignKeyName(ImplicitForeignKeyNameSource source) {
-		//System.out.println("getReferencedTableName "+source.getReferencedTableName().getText());
-		//System.out.println("getTableName "+source.getTableName().getText());
-		//System.out.println("getReferencedColumnNames "+source.getReferencedColumnNames().size());
-		//System.out.println("getReferencedColumnNames "+source.getReferencedTableName().getCanonicalName());
 		return super.determineForeignKeyName(source);
 	}
 
@@ -75,6 +66,20 @@ public class CustomNamingStrategy extends ImplicitNamingStrategyJpaCompliantImpl
 		pluralForm.append(PREFIX);
 		pluralForm.append(tableNameInSingularForm);
 		return pluralForm.toString();
+	}
+	
+	private String addUnderscores(String name) {
+		StringBuilder buf = new StringBuilder( name.replace('.', '_') );
+		for (int i=1; i<buf.length()-1; i++) {
+			if (
+				Character.isLowerCase( buf.charAt(i-1) ) &&
+				Character.isUpperCase( buf.charAt(i) ) &&
+				Character.isLowerCase( buf.charAt(i+1) )
+			) {
+				buf.insert(i++, '_');
+			}
+		}
+		return buf.toString().toLowerCase(Locale.ROOT);
 	}
 
 }

@@ -15,6 +15,5 @@ public class EmployeeServiceTest extends BaseServiceTest{
 		
 		emp = employeeService.create(emp);
 		Assert.assertNotNull(emp.getOid());
-		while(true);
 	}
 }
